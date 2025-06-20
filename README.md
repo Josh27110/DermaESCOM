@@ -1,5 +1,5 @@
 # DermaESCOM
-![Demostración de la Aplicación](https://i.imgur.com/gKj3a1C.png)
+
 
 Este es un proyecto full-stack de inteligencia artificial que utiliza un modelo de aprendizaje profundo para clasificar la severidad del acné a partir de una imagen. La aplicación web permite a los usuarios subir una foto o usar su cámara en vivo para recibir un análisis instantáneo y recomendaciones.
 
