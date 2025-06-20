@@ -3,6 +3,13 @@
 
 Este es un proyecto full-stack de inteligencia artificial que utiliza un modelo de aprendizaje profundo para clasificar la severidad del acné a partir de una imagen. La aplicación web permite a los usuarios subir una foto o usar su cámara en vivo para recibir un análisis instantáneo y recomendaciones.
 
+https://drive.google.com/file/d/12dYC1nGnDsAx9q0L04H-HOnX4Dg2sx-7/view?usp=sharing
+TypeScript
+
+https://drive.google.com/file/d/1c0JAjvPQ87mwe5MSeW_Gd2pSU9W9n6L5/view?usp=sharing
+Python/Flask Server
+
+
 ---
 
 ## 🚀 Tecnologías Utilizadas
