@@ -1,4 +1,4 @@
-#DermaESCOM - Analizador de Severidad de Acné con Inteligencia Artificial
+# DermaESCOM  Analizador de Severidad de Acné con Inteligencia Artificial
 
 
 
