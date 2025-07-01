@@ -84,6 +84,7 @@ Asegúrate de tener instalado el siguiente software:
     cd <NOMBRE_DE_LA_CARPETA_DEL_PROYECTO>
     ```
    Omitir este paso, debido al peso del Keras, se proporcionan enlaces a un drive de Tanto el Front y el Back del Proyecto, ACNEIA4 contiene la parte del Back y acne-analyzer es el Front
+   
 2.  **Coloca el Modelo de IA:** Este es un paso manual y crucial.
     * Obtén el archivo del modelo entrenado: `acne_severity_model.keras`.
     * Colócalo dentro de la carpeta del backend. La ruta final debe ser: `<CARPETA_PROYECTO>/ACNEIA4/acne_severity_model.keras`.
