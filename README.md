@@ -129,7 +129,7 @@ Ahora que todo está configurado, necesitarás dos terminales abiertas para ejec
 
 1.  **Inicia el Backend:** En la primera terminal (con el entorno virtual `(venv)` activado), ejecuta:
     ```bash
-    flask run --host=0.0.0.0 --port=8080
+    python app.py
     ```
     El servidor de IA estará ahora escuchando peticiones. Deja esta terminal funcionando.
 
