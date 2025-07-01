@@ -147,3 +147,29 @@ Ahora que todo está configurado, necesitarás dos terminales abiertas para ejec
 ## 6. Descargo de Responsabilidad
 
 Esta herramienta ha sido desarrollada con fines educativos y de demostración. **No es un dispositivo médico y no sustituye el diagnóstico, consejo o tratamiento de un profesional de la salud calificado.** Los resultados proporcionados por la IA son una evaluación basada en patrones y no deben ser considerados como un diagnóstico médico definitivo.
+
+## 7. Capturas de Pantalla del proceso de ejecución
+Se anexan a continuación las captura de pantalla de como ejecutar dicho proyecto y como se visualiza en página web:
+   1. **Inicio de Backend y Frontend en las terminales**
+      ![image](https://github.com/user-attachments/assets/43da47b4-9708-4164-a52a-6177210521f8)
+
+   2. **Pantalla Inicial de DermaESCOM en localhost**
+      ![image](https://github.com/user-attachments/assets/8164cbe0-bb14-4589-afa4-687e91260781)
+
+   3. **Pantalla para tomar foto mediante cámara**
+      ![image](https://github.com/user-attachments/assets/81da948b-4fce-481f-9a49-c3760a33fc59)
+
+   4. **Pantalla haciendo análisis de foto subida por cámara**
+      ![image](https://github.com/user-attachments/assets/3bed82d4-08c2-4fed-8c56-a3cda3b9af75)
+
+   5. **Pantalla entregando Resultados**
+      ![image](https://github.com/user-attachments/assets/151ab12d-8b5f-49e9-8faa-fd8c6c1597b6)
+
+   6. **Subir Foto de Acné**
+      ![image](https://github.com/user-attachments/assets/a5cfeb78-0ca7-4877-9f2b-311d22cd5458)
+
+   7. **Resultados de Foto de Acné**
+      ![image](https://github.com/user-attachments/assets/1c75eb9e-f356-42e8-8cb5-f340a58e99e8)
+
+      
+      
