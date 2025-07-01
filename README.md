@@ -1,6 +1,6 @@
-# Analizador de Severidad de Acné con Inteligencia Artificial
+#DermaESCOM - Analizador de Severidad de Acné con Inteligencia Artificial
 
-![Demostración de la Aplicación](https://i.imgur.com/gKj3a1C.png)
+
 
 ## 1. Resumen del Proyecto
 
