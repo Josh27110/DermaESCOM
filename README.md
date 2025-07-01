@@ -58,25 +58,22 @@ El resultado fue un modelo mucho más equilibrado y preciso en las categorías q
     * **Python:** Lenguaje principal.
     * **TensorFlow/Keras:** Framework para construir y entrenar el modelo de IA.
     * **Flask:** Micro-framework para crear la API que sirve el modelo.
-    * **Gunicorn:** Servidor web para ejecutar la aplicación Flask en producción (dentro de Docker).
 * **Frontend (Interfaz de Usuario):**
     * **Next.js / React:** Framework para construir la aplicación web interactiva.
     * **TypeScript:** Para un código más seguro y mantenible.
     * **Tailwind CSS & shadcn/ui:** Para un diseño moderno y componentes de UI.
-* **Despliegue y Orquestación:**
-    * **Docker:** Para empaquetar el backend y el frontend en contenedores portátiles y aislados.
-    * **Docker Compose:** Para definir y ejecutar la aplicación multi-contenedor con un solo comando.
 
 ---
 
-## 5. Guía de Instalación y Ejecución
+## 5. Guía de Instalación y Ejecución Manual
 
-Esta guía te permitirá ejecutar el proyecto completo en tu propia máquina. El método recomendado es usar Docker.
+Esta guía te permitirá ejecutar el proyecto completo en tu propia máquina.
 
 ### **Paso 1: Requisitos Previos**
 
 Asegúrate de tener instalado el siguiente software:
-* **Docker Desktop:** Incluye Docker y Docker Compose. Es la única herramienta necesaria para el método recomendado. [Descargar Docker](https://www.docker.com/products/docker-desktop/).
+* **Python (v3.9 o superior):** [Descargar Python](https://www.python.org/downloads/)
+* **Node.js (v18 o superior):** [Descargar Node.js](https://nodejs.org/)
 * **Git:** Para clonar el repositorio. [Descargar Git](https://git-scm.com/downloads).
 
 ### **Paso 2: Configuración del Proyecto**
@@ -91,28 +88,58 @@ Asegúrate de tener instalado el siguiente software:
     * Obtén el archivo del modelo entrenado: `acne_severity_model.keras`.
     * Colócalo dentro de la carpeta del backend. La ruta final debe ser: `<CARPETA_PROYECTO>/ACNEIA4/acne_severity_model.keras`.
 
-3.  **Verifica los Archivos de Docker:** Asegúrate de que los siguientes archivos existan en sus respectivas carpetas:
-    * `ACNEIA4/Dockerfile`
-    * `acne-analyzer-frontend/Dockerfile`
-    * `docker-compose.yml` (en la raíz del proyecto)
+### **Paso 3: Configuración del Backend (Python/Flask)**
 
-### **Paso 3: Ejecutar la Aplicación con Docker**
-
-1.  **Asegúrate de que Docker Desktop esté en ejecución** en tu computadora.
-
-2.  Abre una terminal en la **carpeta raíz del proyecto** (donde se encuentra `docker-compose.yml`).
-
-3.  Ejecuta el siguiente comando:
+1.  En tu terminal, navega a la carpeta del backend:
     ```bash
-    docker-compose up --build
+    cd ACNEIA4
     ```
-    * La primera vez, este comando tardará varios minutos mientras Docker construye las "imágenes" de tus aplicaciones. Descargará los entornos de Python y Node.js e instalará todas las dependencias.
-    * Las veces posteriores será mucho más rápido.
+2.  **Crea y activa un entorno virtual:**
+    ```bash
+    # Crear el entorno virtual
+    python -m venv venv
 
-4.  **Accede a la Aplicación:** Una vez que veas en la terminal los registros de ambos servicios (backend y frontend), abre tu navegador web y ve a:
-    **`http://localhost:3000`**
+    # Activar en Windows
+    .\venv\Scripts\activate
 
-5.  **Para detener la aplicación:** Vuelve a la terminal y presiona `Ctrl + C`.
+    # Activar en macOS/Linux
+    source venv/bin/activate
+    ```
+3.  **Instala las dependencias de Python:**
+    ```bash
+    pip install Flask tensorflow numpy Pillow Flask-Cors
+    ```
+
+### **Paso 4: Configuración del Frontend (Next.js)**
+
+1.  Abre una **nueva terminal** y navega a la carpeta del frontend:
+    ```bash
+    cd <RUTA_A_LA_CARPETA_DEL_PROYECTO>/acne-analyzer-frontend
+    ```
+2.  **Instala las dependencias de Node.js:**
+    ```bash
+    npm install
+    # o si usas pnpm: pnpm install
+    ```
+
+### **Paso 5: Ejecutar la Aplicación**
+
+Ahora que todo está configurado, necesitarás dos terminales abiertas para ejecutar la aplicación.
+
+1.  **Inicia el Backend:** En la primera terminal (con el entorno virtual `(venv)` activado), ejecuta:
+    ```bash
+    flask run --host=0.0.0.0 --port=8080
+    ```
+    El servidor de IA estará ahora escuchando peticiones. Deja esta terminal funcionando.
+
+2.  **Inicia el Frontend:** En la segunda terminal, ejecuta:
+    ```bash
+    npm run dev
+    # o si usas pnpm: pnpm dev
+    ```
+    La aplicación web estará ahora disponible en `http://localhost:3000`.
+
+3.  **Prueba la aplicación:** Abre tu navegador web y ve a `http://localhost:3000`.
 
 ---
 
