@@ -1,78 +1,74 @@
-# DermaESCOM
+# DermoScan AI: Sistema de Detección de Melanoma con IA
 
-
-Este es un proyecto full-stack de inteligencia artificial que utiliza un modelo de aprendizaje profundo para clasificar la severidad del acné a partir de una imagen. La aplicación web permite a los usuarios subir una foto o usar su cámara en vivo para recibir un análisis instantáneo y recomendaciones.
-
-https://drive.google.com/file/d/12dYC1nGnDsAx9q0L04H-HOnX4Dg2sx-7/view?usp=sharing
-TypeScript
-
-https://drive.google.com/file/d/1c0JAjvPQ87mwe5MSeW_Gd2pSU9W9n6L5/view?usp=sharing
-Python/Flask Server
-
+Una aplicación web de extremo a extremo que aprovecha el aprendizaje profundo para realizar análisis en tiempo real de imágenes de lesiones cutáneas para la detección preliminar de melanoma. Esta herramienta proporciona una interfaz intuitiva para que los usuarios obtengan una evaluación instantánea impulsada por inteligencia artificial.
 
 ---
 
-## 🚀 Tecnologías Utilizadas
+## 📜 Descripción del Proyecto
 
-Este proyecto está dividido en dos partes principales: un backend para la IA y un frontend para la interfaz de usuario.
-
-* **Backend (IA):**
-    * **Python:** Lenguaje de programación principal.
-    * **Flask:** Framework web para crear el servidor de la API.
-    * **TensorFlow / Keras:** Para cargar y ejecutar el modelo de clasificación de imágenes.
-    * **Pillow:** Para el preprocesamiento de imágenes.
-
-* **Frontend (Interfaz de Usuario):**
-    * **Next.js:** Framework de React para construir la aplicación web.
-    * **React:** Biblioteca para construir la interfaz de usuario.
-    * **TypeScript:** Para un código más robusto y seguro.
-    * **Tailwind CSS & shadcn/ui:** Para el diseño y los componentes de la interfaz.
+Este proyecto representa un ciclo de vida completo de machine learning. Comenzó con la adquisición de un conjunto de datos de imágenes médicas (HAM10000), seguido del entrenamiento de un modelo de aprendizaje profundo en un entorno de nube con GPU. El modelo entrenado se sirve a través de una API REST de Python/Flask. Finalmente, una interfaz de usuario moderna y responsiva, construida con Next.js y TypeScript, se comunica con el backend para ofrecer una experiencia de usuario fluida.
 
 ---
 
-## 📋 Requisitos Previos
+## ✨ Características Principales
 
-Antes de comenzar, asegúrate de tener instalado el siguiente software en tu sistema:
-
-* **Python (versión 3.9 o superior):** [Descargar Python](https://www.python.org/downloads/)
-* **Node.js (versión 18 o superior):** [Descargar Node.js](https://nodejs.org/)
-* **PNPM (Opcional pero recomendado):** Gestor de paquetes para el proyecto de Node.js. Puedes instalarlo con `npm install -g pnpm`.
-
----
-
-## 📂 Estructura del Proyecto
-
-Para que la aplicación funcione, ambos proyectos (backend y frontend) deben estar en tu máquina. La estructura de carpetas recomendada es la siguiente:
-
-
-proyecto-acne/
-├── acne-classifier-app/   # Carpeta del Backend (Python/Flask)
-│   ├── venv/
-│   ├── app.py
-│   └── acne_severity_model.keras
-│
-└── acne-analyzer-1/       # Carpeta del Frontend (Next.js)
-├── app/
-├── components/
-└── package.json
-
+-   **Análisis con IA en tiempo real**: Utiliza un modelo **ResNet50** entrenado para clasificar lesiones cutáneas.
+-   **Doble método de entrada de imagen**: Permite a los usuarios **cargar un archivo** de imagen o usar la **cámara del dispositivo** para una captura en vivo.
+-   **Clasificación Binaria**: Clasifica las lesiones como **Benigno** (no canceroso) o **Maligno** (potencialmente canceroso).
+-   **Interfaz de Usuario Dinámica**: Los resultados se codifican por colores (🟢 Verde para Benigno, 🔴 Rojo para Maligno) para una comprensión inmediata.
+-   **Diseño Responsivo**: Totalmente funcional en computadoras de escritorio y dispositivos móviles.
+-   **Interfaz en Español**: Toda la UI está presentada en español.
 
 ---
 
-## 🛠️ Configuración y Ejecución
+## 🛠️ Tecnologías Utilizadas
 
-Sigue estos pasos para configurar y ejecutar el proyecto localmente. Deberás tener dos terminales o ventanas de línea de comandos abiertas, una para el backend y otra para el frontend.
+### **Frontend (Interfaz de Usuario)**
+-   **Framework**: Next.js (App Router)
+-   **Lenguaje**: TypeScript
+-   **Estilos**: Tailwind CSS
+-   **Componentes**: shadcn/ui (generado por v0.dev)
 
-### **Paso 1: Configurar el Backend (Servidor de IA)**
+### **Backend (API del Modelo)**
+-   **Framework**: Python / Flask
+-   **Librerías Clave**: Flask-Cors, Pillow, NumPy
 
-1.  **Clona el repositorio** y navega a la carpeta del backend:
+### **IA y Machine Learning**
+-   **Arquitectura**: ResNet50 (usando Transfer Learning)
+-   **Framework**: TensorFlow / Keras
+-   **Dataset**: HAM10000
+-   **Entorno de Entrenamiento**: Google Colab con GPU
+
+---
+
+## 🚀 Instalación y Configuración
+
+Esta guía te llevará a través de todo el proceso, desde la instalación de las herramientas base hasta la ejecución de la aplicación.
+
+### **Paso 1: Instalar Requisitos Previos (si no los tienes)**
+
+#### **Python**
+El backend está construido con Python.
+1.  **Descarga Python**: Ve al [sitio web oficial de Python](https://www.python.org/downloads/) y descarga un instalador para la versión 3.8 o superior.
+2.  **Instala Python**: Ejecuta el instalador. **Importante:** Durante la instalación en Windows, asegúrate de marcar la casilla que dice **"Add Python to PATH"**.
+3.  **Verifica la instalación**: Abre una nueva terminal y escribe `python --version`. Deberías ver la versión que instalaste.
+
+#### **Node.js y npm**
+El frontend requiere Node.js, que incluye el manejador de paquetes `npm`.
+1.  **Descarga Node.js**: Ve al [sitio web oficial de Node.js](https://nodejs.org/) y descarga la versión **LTS** (Long Term Support).
+2.  **Instala Node.js**: Ejecuta el instalador, aceptando las opciones por defecto.
+3.  **Verifica la instalación**: Abre una nueva terminal y ejecuta `node -v` y `npm -v`. Deberías ver las versiones de cada herramienta.
+
+### **Paso 2: Configurar el Backend (Python)**
+
+1.  **Navega a la carpeta del backend** en tu terminal:
     ```bash
-    cd ruta/hacia/acne-classifier-app
+    cd melanoma-backend
     ```
 
-2.  **Crea y activa un entorno virtual:**
+2.  **Crea y activa un entorno virtual**. Esto crea un espacio aislado para las librerías de Python de este proyecto.
     ```bash
-    # Crear el entorno virtual
+    # Crear el entorno
     python -m venv venv
 
     # Activar en Windows
@@ -81,46 +77,54 @@ Sigue estos pasos para configurar y ejecutar el proyecto localmente. Deberás te
     # Activar en macOS/Linux
     source venv/bin/activate
     ```
+    *(Verás `(venv)` al inicio de la línea en tu terminal si se activó correctamente)*
 
-3.  **Instala las dependencias de Python:**
+3.  **Instala las librerías de Python** desde el archivo `requirements.txt`:
     ```bash
-    pip install Flask tensorflow numpy Pillow Flask-Cors
+    pip install -r requirements.txt
     ```
 
-4.  **Coloca el modelo:** Asegúrate de que tu archivo de modelo entrenado, `acne_severity_model.keras`, esté dentro de esta carpeta (`acne-classifier-app`).
-
-### **Paso 2: Configurar el Frontend (Interfaz de Usuario)**
-
-1.  Abre una **nueva terminal** y navega a la carpeta del frontend:
+4.  **Ejecuta el servidor de Flask**:
     ```bash
-    cd ruta/hacia/acne-analyzer-1
+    python app.py
+    ```
+    El backend ahora estará corriendo en `http://127.0.0.1:8080`. **Mantén esta terminal abierta.**
+
+### **Paso 3: Configurar el Frontend (Next.js)**
+
+1.  **Abre una segunda terminal.**
+
+2.  **Navega a la carpeta del frontend:**
+    ```bash
+    cd melanoma-frontend
     ```
 
-2.  **Instala las dependencias de Node.js:**
+3.  **Instala `pnpm` globalmente** (manejador de paquetes rápido):
+    ```bash
+    npm install -g pnpm
+    ```
+
+4.  **Instala las dependencias del proyecto:**
     ```bash
     pnpm install
-    # o si usas npm: npm install
     ```
 
-### **Paso 3: Ejecutar la Aplicación**
-
-1.  **Inicia el Backend:** En la primera terminal (con el entorno virtual activado), ejecuta:
-    ```bash
-    flask run --host=0.0.0.0 --port=8080
-    ```
-    El servidor de IA estará ahora escuchando peticiones en el puerto 8080.
-
-2.  **Inicia el Frontend:** En la segunda terminal, ejecuta:
+5.  **Ejecuta el servidor de desarrollo de Next.js:**
     ```bash
     pnpm dev
-    # o si usas npm: npm run dev
     ```
-    La aplicación web estará ahora disponible en `http://localhost:3000`.
-
-3.  **¡Prueba la aplicación!** Abre tu navegador web y ve a `http://localhost:3000`. Ya puedes subir una imagen o usar tu cámara para probar el analizador.
+    El frontend ahora estará corriendo en `http://localhost:3000`. **Mantén esta segunda terminal abierta.**
 
 ---
 
-## ⚠️ Descargo de Responsabilidad
+## 💻 Uso de la Aplicación
 
-Esta herramienta es solo para fines informativos y educativos, y **no sustituye el consejo médico profesional**. Los resultados del análisis de IA no constituyen un diagnóstico médico. Para problemas de piel persistentes o graves, consulta siempre con un dermatólogo certificado o un profesional de la salud calificado.
+1.  Con ambos servidores corriendo, abre tu navegador web.
+2.  Ve a la dirección del frontend: `http://localhost:3000`.
+3.  Usa los botones "Subir Imagen" o "Usar Cámara Web" para proporcionar una imagen y recibir el análisis.
+
+---
+
+## ⚠️ Descargo de Responsabilidad Médica
+
+Esta herramienta de diagnóstico por IA está destinada únicamente para fines educativos y de detección. **No** constituye un consejo, diagnóstico o tratamiento médico profesional. Todos los resultados deben ser validados por un profesional de la salud calificado. Si tienes alguna lesión o síntoma preocupante, consulta inmediatamente con un dermatólogo certificado.
